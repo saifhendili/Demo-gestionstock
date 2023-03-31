@@ -1,3 +1,9 @@
+@echo off
+echo Welcome!
+cd "C:\Users\saifh\Desktop\fruit de mer\fruit de mer"
+start cmd /k "npm run dev"
+exit
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
