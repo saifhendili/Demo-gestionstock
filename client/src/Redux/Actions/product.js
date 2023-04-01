@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { SetAlert } from './alert';
-import { ADD_PRODUCT,GET_PRODUCT,GET_PRODUCTS,EDIT_PRODUCT,DELETE_PRODUCT,ERROR_PRODUCT
+import { SELL_PRODUCT,ADD_PRODUCT,GET_PRODUCT,GET_PRODUCTS,EDIT_PRODUCT,DELETE_PRODUCT,ERROR_PRODUCT
 } from '../Constants/Types';
 
 export const addProduct = (Fournisseur,Famille,Code,P_achat,P_Vente,quantity) => async (dispatch) => {
@@ -95,6 +95,24 @@ export const addProduct = (Fournisseur,Famille,Code,P_achat,P_Vente,quantity) =>
         type: EDIT_PRODUCT,
       });
       dispatch(SetAlert('Product Edited', 'success'));
+      } catch (err) {
+      dispatch({
+        type: ERROR_PRODUCT,
+        payload: { msg: err.response.statusText, status: err.response.status },
+      });
+    }
+  };
+
+  export const VendreProd = (id,quantity) => async (dispatch) => {
+    try {
+   const res =await axios.put(`/api/product/quantity/${id}`, {quantity});
+  
+      dispatch({
+        type: SELL_PRODUCT,
+        payload: res.data,
+
+      });
+      dispatch(SetAlert('Product sell success', 'success'));
       } catch (err) {
       dispatch({
         type: ERROR_PRODUCT,

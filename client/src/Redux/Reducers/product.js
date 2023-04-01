@@ -1,5 +1,5 @@
 import {
-    ADD_PRODUCT,GET_PRODUCT,GET_PRODUCTS,DELETE_PRODUCT,ERROR_PRODUCT
+  SELL_PRODUCT, ADD_PRODUCT,GET_PRODUCT,GET_PRODUCTS,DELETE_PRODUCT,ERROR_PRODUCT
 } from '../Constants/Types';
 
   const initialState = {
@@ -13,12 +13,18 @@ import {
     const { type, payload } = action;
   
     switch (type) {
-      case GET_PRODUCTS :
-            return {
-                ...state,
-                products: payload,
-                loading: false,
-            };
+      case SELL_PRODUCT:
+          return {
+              ...state,
+              products: payload,
+              loading: false,
+          };   
+            case GET_PRODUCTS :
+          return {
+              ...state,
+              products: payload,
+              loading: false,
+          };
         case GET_PRODUCT :
             return {
                 ...state,

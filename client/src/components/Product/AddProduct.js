@@ -19,6 +19,10 @@ function AddProduct() {
     const onsubmit =async (e) => {
         e.preventDefault();
     dispatch(addProduct(Fournisseur,Famille,Code,P_achat,P_Vente,quantity))
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     }
   return (
     <div class="container-fluid flex-grow-1 container-p-y">
@@ -36,7 +40,19 @@ function AddProduct() {
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">Famille</label>
-                                        <input type="text" class="form-control" name="Famille" value={Famille} onChange={(e) => setFamille(e.target.value)} placeholder="Famille"/>
+                                      
+                                        <select class="form-control" name="Famille" value={Famille} onChange={(e) => setFamille(e.target.value)}>
+  <option value=""> </option>
+  <option value="Électricité ">Électricité </option>
+  <option value="Pinture ">Pinture </option>
+  <option value="Pinture decoratif">Pinture decoratif</option>
+  <option value="PVC">PVC</option>
+  <option value="motocycles ">motocycles </option>
+  <option value="Raccords">Raccords </option>
+  <option value="Maçon">Maçon</option>
+  <option value="Menuiserie">Menuiserie</option>
+  <option value="Divers">Divers</option>
+</select>
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="form-group">

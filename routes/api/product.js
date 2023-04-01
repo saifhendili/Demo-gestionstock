@@ -26,7 +26,26 @@ const auth = require('../../middleware/auth');
       return res.status(500).json({ msg: "Server error" });
     }
   });
-  
+
+
+
+    router.put('/quantity/:id', async (req, res) => {
+    try {
+      const product = await Product.findById(req.params.id);
+
+ if(product){
+    product.quantity=Number(product.quantity)-Number(req.body.quantity);
+ };
+ const products = await Product.find().sort({ date: -1 }).populate('Fournisseur');
+
+await product.save();
+      res.json(products);
+    } catch (err) {
+      return res.status(500).json({ msg: "Server error" });
+    }
+  });
+
+
   router.delete('/:id',auth, async (req, res) => {
     try {
       const product = await Product.findById(req.params.id);

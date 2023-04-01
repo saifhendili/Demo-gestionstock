@@ -39,7 +39,20 @@ function Aside() {
     <div class="sidebar-heading">
         Interface
     </div>
-
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+            aria-expanded="true" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Product</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Manage Product:</h6>
+                <Link class="collapse-item" to="/AddProduct">Add Product</Link>
+                <Link class="collapse-item" to="/ListProduct">List Product</Link>
+            </div>
+        </div>
+    </li>
     <li class="nav-item">
     <button style={linkStyle} class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
   <i class="fas fa-fw fa-cog"></i>
@@ -75,20 +88,7 @@ function Aside() {
         Stock
     </div>
 
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-            aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Product</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Manage Product:</h6>
-                <Link class="collapse-item" to="/AddProduct">Add Product</Link>
-                <Link class="collapse-item" to="/ListProduct">List Product</Link>
-            </div>
-        </div>
-    </li>
+
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
             aria-expanded="true" aria-controls="collapsePages">
