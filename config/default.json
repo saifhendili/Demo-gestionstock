@@ -1,4 +1,4 @@
 {
-    "mongoURI": "mongodb://localhost:27017/GestionStock?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://weslatimarwen:JnhC2SKKDqMO22W4@cluster0.rtthwxs.mongodb.net/GESTION?retryWrites=true&w=majority",
     "jwtSecret":"mysecrettoken"
   }
